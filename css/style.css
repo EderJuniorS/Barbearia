@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* ===== ESTILOS DA PAGINA ===== */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+
+
+/* ===== ESTILOS DA SEÇÃO MENU ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    padding: 15px 0;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 155px;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 30px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Inria Serif';
+}
+
+.social-icons a {
+    color: #ffffff;
+    margin-left: 40px;
+    font-size: 60px;
+    text-decoration: none;
+}
+
+.social-icons a:first-child {
+    border-left: 1px solid #ffffff;
+    padding-left: 60px;
+}
+
+
+
+
+/* ===== ESTILOS DA SEÇÃO DO BANNER ===== */
+.banner img {
+    background-size: cover;
+    background-position: center;
+    width: 99%;
+    height: auto;
+    border-radius: 70px;
+    border: #ffffff 1px outset;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+
+
+
+/* ===== ESTILOS DA SEÇÃO NOSSA MARCA ===== */
+.nossa-marca {
+    padding: 80px 0 20px; /* 80px topo, 0 laterais, 20px fundo */
+}
+
+/* Usamos o mesmo container para manter o alinhamento */
+.nossa-marca .container {
+    display: flex;
+    align-items: center; /* Alinha o texto e a logo verticalmente */
+    justify-content: space-between;
+    gap: 40px; /* Espaço entre o texto e a logo */
+}
+
+.texto-marca {
+    flex-basis: 60%; /* Ocupa 60% da largura */
+}
+
+.texto-marca h1 {
+    font-family: 'Playfair Display', serif; /* Fonte com serifa para o título */
+    font-size: 120px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.texto-marca p {
+    font-family: 'Montserrat', sans-serif; /* Fonte sem serifa para o parágrafo */
+    font-size: 18px;
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+    margin-bottom: 20px;
+}
+
+.logo-marca {
+    flex-basis: 35%; /* Ocupa 35% da largura */
+    text-align: right;
+}
+
+.logo-marca img {
+    max-width: 100%; /* Garante que a imagem seja responsiva */
+    height: auto;
+}
+
+
+
+
+/* ===== ESTILOS DA SEÇÃO AGENDAMENTO ===== */
+.agendamento {
+    padding: 20px 20px 80px; /* 20px topo, 20px laterais, 80px fundo */
+    text-align: center;
+}
+
+.agendamento h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 128px;
+    margin-bottom: 60px;
+}
+
+.servicos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Espaçamento entre os cards */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+}
+
+.servico-item {
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    width: 250px; /* Largura fixa para cada item */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.servico-item:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    background-color: #1a1a1a;
+}
+
+.servico-item img {
+    max-width: 100%;
+    height: auto; /* Altura fixa para as imagens */
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+
+
+
+/* ===== ESTILOS DA SEÇÃO ENDEREÇO ===== */
+.endereco {
+    padding: 80px 20px;
+}
+
+.container-endereco {
+    max-width: 900px; /* Largura máxima específica para esta seção */
+    margin: 0 auto;
+}
+
+.endereco h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    margin-bottom: 40px;
+    padding-left: 20px;
+}
+
+.card-endereco {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #ffffff;
+    border-radius: 40px; /* Bordas bem arredondadas */
+    padding: 40px;
+    gap: 30px;
+}
+
+.info-endereco {
+    flex-basis: 55%; /* Ocupa 55% do espaço do card */
+}
+
+.info-endereco h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.info-endereco p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.info-endereco strong {
+    font-weight: 700;
+}
+
+.btn-mapa {
+    display: inline-block;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    padding: 12px 25px;
+    margin-top: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-mapa:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.mapa-img {
+    flex-basis: 40%; /* Ocupa 40% do espaço do card */
+    text-align: right;
+}
+
+.mapa-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* Bordas arredondadas para a imagem do mapa */
+}
+
+
+
+
+/* ===== ESTILOS DA SEÇÃO PRODUTOS ===== */
+.produtos {
+    /* Define a imagem de fundo */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/Produtos.png');
+    background-size: cover; /* Cobre todo o espaço da seção */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    padding: 100px 0;
+}
+
+/* Faz o container da seção de produtos ocupar a altura toda */
+.produtos .container {
+    display: flex;
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    min-height: 400px;
+}
+
+.produtos-texto {
+    max-width: 50%; /* Limita a largura do texto para não esticar demais */
+}
+
+.bigode-icon {
+    width: 250px; /* Tamanho do ícone de bigode */
+    margin-bottom: 20px;
+}
+
+.produtos-texto h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+    text-transform: uppercase; /* Coloca o texto em maiúsculo */
+}
+
+.produtos-texto p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+
+
+
+/* ===== ESTILOS DA SEÇÃO FORMULÁRIO DE CONTATO ===== */
+.formulario-contato {
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px; /* Largura máxima do formulário */
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.form-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    position: relative;
+    z-index: 1; /* Garante que o input fique sobre o label */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+.form-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 18px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    pointer-events: none; /* Permite clicar através do label */
+}
+
+/* Animação do label quando o campo está focado ou preenchido */
+.form-group input:focus + label,
+.form-group input:valid + label,
+.form-group textarea:focus + label,
+.form-group textarea:valid + label {
+    top: -20px;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+
+
+
+/* Pequenos ajustes para os novos campos do formulário */
+.form-group select,
+.form-group input[type="date"],
+.form-group input[type="time"] {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    z-index: 1;
+}
+
+/* Cor do texto do placeholder do select */
+.form-group select:invalid {
+    color: #aaa;
+}
+.form-group select option {
+    background: #333;
+}
+
+/* Garante que o label de data/hora fique sempre em cima */
+.form-group .label-date {
+    top: -20px;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+
+
+
+
+.btn-enviar {
+    display: block;
+    margin: 40px auto 0;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 25px;
+    color: #ffffff;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+
+
+/* ===== ESTILOS DO RODAPÉ ===== */
+.site-footer {
+    background-color: #000000;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #222222; /* Linha sutil para separar do conteúdo */
+}
+
+.site-footer p {
+    margin: 0;
+    font-family: 'Playfair Display', serif; /* Fonte elegante para o rodapé */
+    font-size: 16px;
+    color: #a0a0a0; /* Cor cinza claro para não chamar muita atenção */
+}
+
+html {
+    scroll-behavior: smooth;
+}

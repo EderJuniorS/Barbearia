@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia VINTA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/Logo.png" alt="Logo Barbearia">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="btn-inicio">Início</a></li>
+                    <li><a href="#nossa-marca" id="link-nossa-marca">Nossa Marca</a></li>
+                    <li><a href="#serviços">Serviços</a></li>
+                    <li><a href="#endereço">Endereço</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/barbearia_r.argente?igsh=amw1ZW1kZ29sNnNt"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="banner">
+        <img src="img/Banner.png">
+    </div>
+
+    <section class="nossa-marca" id="nossa_marca">
+        <div class="container">
+            <div class="texto-marca">
+                <h1>Nossa Marca</h1>
+                <p>
+                    Inspirada nas antigas barbearias nova-iorquinas típicas das décadas de 40, 50 e 60,
+                    a Barbearia Teste chega com a intenção de resgatar a cultura masculina, perdida
+                    ao longo dos anos, em que os homens se encontravam para fazer a barba à navalha e
+                    cortar os cabelos enquanto fumavam seus charutos, bebiam e conversavam.
+                </p>
+                <p>
+                    Entre toalhas quentes e massagem facial, os melhores cremes e espumas preparam o
+                    rosto dos nossos clientes. E hoje, eles e nossos visitantes ainda podem aproveitar o
+                    espaço da nossa cervejaria.
+                </p>
+            </div>
+            <div class="logo-marca">
+                <img src="img/Logo.png" alt="Logo Barbearia Teste">
+            </div>
+        </div>
+    </section>
+
+    <section class="agendamento" id="serviços">
+  <h2>Agende seu corte<br>em nosso site</h2>
+  <div class="servicos-container">
+
+    <div class="servico-item">
+      <a href="barba.html">
+        <img src="img/servicos/Barba.png" alt="Ícone de Barba">
+      </a>
+    </div>
+
+    <div class="servico-item">
+      <a href="cabelo.html">
+        <img src="img/servicos/Cabelo.png" alt="Ícone de Cabelo">
+      </a>
+    </div>
+
+    <div class="servico-item">
+      <a href="cabelo-e-barba.html">
+        <img src="img/servicos/Cabelo+Barba.png" alt="Ícone de Cabelo e Barba">
+      </a>
+    </div>
+
+  </div>
+</section>
+
+    <section class="endereco" id="endereço">
+        <div class="container-endereco">
+            <h1>Endereço</h1>
+            <div class="card-endereco">
+                <div class="info-endereco">
+                    <h2>Franca</h2>
+                    <p>R. Paschoal Bombicino - Jardim Maria Rosa<br>Franca - SP, 14409-403</p>
+                    <p><strong>Telefone:</strong> (16) 999901-2099</p>
+                    <p>
+                        <strong>Terça à Sexta-Feira</strong> 09h às 20h<br>
+                        <strong>Sábado</strong> 08h às 19h
+                    </p>
+                    <a href="https://maps.app.goo.gl/Fhijv3MhvWT8sEVr6?g_st=ipc" class="btn-mapa" target="_blank">Ver no Mapa</a>
+                </div>
+                <div class="mapa-img">
+                    <img src="img/Mapa.png" alt="Localização da barbearia no mapa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="produtos">
+        <div class="container">
+            <div class="produtos-texto">
+                <img src="img/Bigode.png" alt="Ícone de bigode" class="bigode-icon">
+                <h1>PRODUTOS<br>CORLEONE</h1>
+                <p>Temos uma linha de Produtos Especiais para barba, cabelo e bigode.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="formulario-contato" id="agendar">
+    <div class="form-container">
+        <h2>Agende seu horario</h2>
+        <form action="#">
+            <div class="form-group">
+                <select id="servico" name="servico" required>
+                    <option value="" disabled selected>Selecione o serviço...</option>
+                    <option value="Cabelo">Cabelo</option>
+                    <option value="Barba">Barba</option>
+                    <option value="Cabelo + Barba">Cabelo + Barba</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="nome" name="nome" required>
+                <label for="nome">Nome</label>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="celular" name="celular" required>
+                <label for="celular">Celular</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email"> <label for="email">Email (Opcional)</label>
+            </div>
+            <div class="form-group">
+                <input type="date" id="data_agendamento" name="data_agendamento" required>
+                <label for="data_agendamento" class="label-date">Data</label>
+            </div>
+            <div class="form-group">
+                <input type="time" id="horario_agendamento" name="horario_agendamento" required>
+                <label for="horario_agendamento" class="label-date">Horário</label>
+            </div>
+            <div class="form-group">
+                <textarea id="observacao" name="observacao" rows="2"></textarea>
+                <label for="observacao">Observação (Opcional)</label>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+    </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>Barbearia Teste 2025. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/index.js"></script>
+
+</body>
+</html>
