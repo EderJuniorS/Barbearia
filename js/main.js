@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const SUPABASE_URL = 'https://dqerhegphgxhcsgthzck.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRxZXJoZWdwaGd4aGNzZ3RoemNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4OTQ1NTksImV4cCI6MjA3MjQ3MDU1OX0.EYrbAaTYW4mmP5dvHlgjq4TEokC8n5uCjgx0FFrSF1I';
 
+
     // CORREÇÃO: Usamos a função createClient do objeto global supabase
     const { createClient } = supabase;
     const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
