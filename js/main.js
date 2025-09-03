@@ -1,23 +1,46 @@
-// js/main.js
-
 document.addEventListener("DOMContentLoaded", function () {
 
     // ==========================================================
     // 1. INICIALIZAÇÃO DO CALENDÁRIO (FLATPICKR)
     // ==========================================================
     flatpickr("#data_agendamento", {
-        locale: "pt", // Traduz para Português
-        dateFormat: "Y-m-d", // Formato que o banco de dados espera
-        minDate: "today", // Impede que o usuário selecione datas passadas
-        altInput: true, // Mostra um formato amigável para o usuário
-        altFormat: "d/m/Y", // Formato amigável (ex: 03/09/2025)
+        locale: "pt",
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        altInput: true,
+        altFormat: "d/m/Y",
     });
 
     // ==========================================================
-    // 2. CONFIGURAÇÃO E LÓGICA DO SUPABASE
+    // 2. LÓGICA DA MÁSCARA DE CELULAR (IMASK)
     // ==========================================================
-    const SUPABASE_URL = 'https://dqerhegphgxhcsgthzck.supabase.co'; // MANTENHA SUAS CHAVES AQUI
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRxZXJoZWdwaGd4aGNzZ3RoemNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4OTQ1NTksImV4cCI6MjA3MjQ3MDU1OX0.EYrbAaTYW4mmP5dvHlgjq4TEokC8n5uCjgx0FFrSF1I'; // MANTENHA SUAS CHAVES AQUI
+    const celularInput = document.getElementById('celular');
+    const maskOptions = {
+        mask: '(00) 00000-0000'
+    };
+    const mask = IMask(celularInput, maskOptions);
+
+    // ==========================================================
+    // 3. LÓGICA DA GRADE DE HORÁRIOS
+    // ==========================================================
+    const horarioGrid = document.querySelector('.horario-grid');
+    const horarioButtons = document.querySelectorAll('.horario-btn');
+    const hiddenHorarioInput = document.querySelector('#horario_agendamento');
+
+    horarioGrid.addEventListener('click', function(event) {
+        if (event.target.classList.contains('horario-btn')) {
+            horarioButtons.forEach(btn => btn.classList.remove('selected'));
+            const selectedButton = event.target;
+            selectedButton.classList.add('selected');
+            hiddenHorarioInput.value = selectedButton.textContent;
+        }
+    });
+
+    // ==========================================================
+    // 4. CONFIGURAÇÃO E LÓGICA DO SUPABASE
+    // ==========================================================
+    const SUPABASE_URL = 'https://dqerhegphgxhcsgthzck.supabase.co'; // MANTENHA SUAS CHAVES
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRxZXJoZWdwaGd4aGNzZ3RoemNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4OTQ1NTksImV4cCI6MjA3MjQ3MDU1OX0.EYrbAaTYW4mmP5dvHlgjq4TEokC8n5uCjgx0FFrSF1I'; // MANTENHA SUAS CHAVES
 
     const { createClient } = supabase;
     const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -28,15 +51,21 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const formData = new FormData(form);
+        if (!hiddenHorarioInput.value) {
+            alert('Por favor, selecione um horário.');
+            return;
+        }
+        
+        const celularValue = mask.unmaskedValue; 
+
         const agendamento = {
-            servico: formData.get('servico'),
-            nome: formData.get('nome'),
-            celular: formData.get('celular'),
-            email: formData.get('email'),
-            data_agendamento: formData.get('data_agendamento'),
-            horario_agendamento: formData.get('horario_agendamento'),
-            observacao: formData.get('observacao')
+            servico: form.servico.value,
+            nome: form.nome.value,
+            celular: celularValue,
+            email: form.email.value,
+            data_agendamento: form.data_agendamento.value,
+            horario_agendamento: form.horario_agendamento.value,
+            observacao: form.observacao.value
         };
 
         submitButton.disabled = true;
@@ -54,15 +83,18 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             alert('Agendamento realizado com sucesso!');
             form.reset();
-            // Limpa o calendário também
             document.querySelector("#data_agendamento")._flatpickr.clear();
+            horarioButtons.forEach(btn => btn.classList.remove('selected'));
+            hiddenHorarioInput.value = '';
+            mask.updateValue();
+
             submitButton.disabled = false;
             submitButton.textContent = 'Enviar';
         }
     });
 
     // ==========================================================
-    // 3. LÓGICA DOS LINKS DO MENU
+    // 5. LÓGICA DOS LINKS DO MENU
     // ==========================================================
     document.querySelectorAll('header nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -73,7 +105,4 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
-
-    // A função do botão Início foi removida para simplificar, 
-    // pois o link '#' já leva para o topo da página.
 });
