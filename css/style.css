@@ -365,6 +365,13 @@ header nav ul li a {
     color: #aaaaaa;
 }
 
+/* Melhora a indicação visual de que o campo de data é clicável */
+input#data_agendamento, 
+input.flatpickr-input {
+    cursor: pointer;
+    background-color: transparent !important; /* Garante que o fundo fique transparente */
+}
+
 /* Pequenos ajustes para os novos campos do formulário */
 .form-group select,
 .form-group input[type="date"],
