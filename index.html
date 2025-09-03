@@ -134,8 +134,10 @@
                 <label for="nome">Nome</label>
             </div>
             <div class="form-group">
-                <input type="tel" id="celular" name="celular" required>
-                <label for="celular">Celular</label>
+                <label class="form-label-grid">Celular</label> <div class="phone-input-container">
+                    <span class="phone-prefix">🇧🇷 +55</span>
+                    <input type="tel" id="celular" name="celular" placeholder="(XX) XXXXX-XXXX" required>
+                </div>
             </div>
             <div class="form-group">
                 <input type="email" id="email" name="email"> <label for="email">Email (Opcional)</label>
@@ -145,8 +147,19 @@
                 <label for="data_agendamento" class="label-date">Data</label>
             </div>
             <div class="form-group">
-                <input type="time" id="horario_agendamento" name="horario_agendamento" required>
-                <label for="horario_agendamento" class="label-date">Horário</label>
+                <label class="form-label-grid">Horário</label>
+                <div class="horario-grid">
+                    <button type="button" class="horario-btn">09:00</button>
+                    <button type="button" class="horario-btn">10:00</button>
+                    <button type="button" class="horario-btn">11:00</button>
+                    <button type="button" class="horario-btn">14:00</button>
+                    <button type="button" class="horario-btn">15:00</button>
+                    <button type="button" class="horario-btn">16:00</button>
+                    <button type="button" class="horario-btn">17:00</button>
+                    <button type="button" class="horario-btn">18:00</button>
+                    <button type="button" class="horario-btn">19:00</button>
+                </div>
+                <input type="hidden" id="horario_agendamento" name="horario_agendamento" required>
             </div>
             <div class="form-group">
                 <textarea id="observacao" name="observacao" rows="2"></textarea>
@@ -165,6 +178,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+    <script src="https://unpkg.com/imask"></script>
     <script src="js/main.js"></script>
 
 </body>
