@@ -365,9 +365,6 @@ header nav ul li a {
     color: #aaaaaa;
 }
 
-
-
-
 /* Pequenos ajustes para os novos campos do formulário */
 .form-group select,
 .form-group input[type="date"],
@@ -398,10 +395,6 @@ header nav ul li a {
     font-size: 14px;
     color: #aaaaaa;
 }
-
-
-
-
 
 .btn-enviar {
     display: block;
@@ -442,4 +435,134 @@ header nav ul li a {
 
 html {
     scroll-behavior: smooth;
+}
+
+
+
+
+/* ========================================================== */
+/* ===== ESTILOS DE RESPONSIVIDADE (MOBILE E TABLET) ===== */
+/* ========================================================== */
+
+/* Para tablets e telas menores (até 992px) */
+@media (max-width: 992px) {
+    /* --- Ajustes Gerais --- */
+    h1 { font-size: 80px !important; }
+    h2 { font-size: 90px !important; }
+
+    /* --- Header --- */
+    header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    header nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    header nav ul li {
+        margin-left: 0;
+    }
+    .social-icons a:first-child {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    /* --- Nossa Marca --- */
+    .nossa-marca .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .texto-marca {
+        order: 2; /* Texto fica embaixo da logo */
+    }
+    .logo-marca {
+        order: 1; /* Logo fica em cima */
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* --- Endereço --- */
+    .card-endereco {
+        flex-direction: column;
+        text-align: center;
+    }
+    .info-endereco {
+        order: 2;
+    }
+    .mapa-img {
+        order: 1;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* --- Produtos --- */
+    .produtos .container {
+        justify-content: center;
+        text-align: center;
+    }
+    .produtos-texto {
+        max-width: 90%;
+    }
+}
+
+
+/* Para celulares (até 768px) */
+@media (max-width: 768px) {
+    /* --- Ajustes Gerais --- */
+    h1 { font-size: 50px !important; }
+    h2 { font-size: 60px !important; }
+
+    /* --- Header --- */
+    header .logo img {
+        height: 120px;
+    }
+    header nav ul li a {
+        font-size: 28px;
+    }
+    .social-icons a {
+        font-size: 45px;
+    }
+
+    /* --- Banner --- */
+    .banner img {
+        border-radius: 40px;
+    }
+
+    /* --- Agendamento (Serviços) --- */
+    .servico-item {
+        width: 80%; /* Ocupa mais espaço na tela */
+    }
+
+    /* --- Formulário --- */
+    .formulario-contato {
+        padding: 80px 10px;
+    }
+    .form-container {
+        padding: 30px;
+    }
+}
+
+
+/* Para celulares pequenos (até 576px) */
+@media (max-width: 576px) {
+    /* --- Ajustes Gerais --- */
+    h1 { font-size: 42px !important; }
+    h2 { font-size: 48px !important; }
+
+    /* --- Header --- */
+    header nav ul {
+        gap: 10px;
+    }
+    header nav ul li a {
+        font-size: 22px;
+    }
+
+    /* --- Produtos --- */
+    .produtos-texto h1 {
+        font-size: 60px !important;
+    }
+    .bigode-icon {
+        width: 180px;
+    }
 }
