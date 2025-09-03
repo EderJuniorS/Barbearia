@@ -422,6 +422,88 @@ input.flatpickr-input {
     color: #000000;
 }
 
+/* ===== ESTILOS DO CAMPO DE CELULAR E AJUSTES FINAIS ===== */
+
+/* Adiciona a linha de volta aos inputs normais e textareas */
+.form-group input:not([type="date"]):not([type="time"]),
+.form-group textarea,
+.form-group select {
+    border-bottom: 1px solid #ffffff;
+}
+
+/* Container do input de celular */
+.phone-input-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ffffff;
+    width: 100%;
+}
+
+/* Prefixo com bandeira e +55 */
+.phone-prefix {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #ffffff;
+    padding-bottom: 10px; /* Alinha com o texto do input */
+}
+
+/* Input de celular sem borda própria */
+.phone-input-container input#celular {
+    border: none !important;
+    flex-grow: 1; /* Faz o input ocupar o espaço restante */
+    padding-left: 0;
+}
+
+/* Ajusta o placeholder para ser mais visível */
+.phone-input-container input#celular::placeholder {
+    color: #777;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== ESTILOS DA GRADE DE HORÁRIOS ===== */
+
+/* Label para a grade de horários */
+.form-group .form-label-grid {
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    position: static; 
+    text-align: left;
+}
+
+/* Container da grade */
+.horario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+}
+
+/* Botões de horário */
+.horario-btn {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+}
+
+/* Efeito ao passar o mouse */
+.horario-btn:hover {
+    background-color: #333333;
+}
+
+/* Estilo do botão quando selecionado */
+.horario-btn.selected {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+}
 
 
 
