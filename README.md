@@ -11,7 +11,7 @@
   
   <br><br>
 
-  <a href="https://ederjuniors.github.io/Barbearia/">
+  <a href="https://ederjuniors.github.io/Premium-Barber-Landing">
     <img src="https://img.shields.io/badge/📅_Agendar_Corte-Ver_Demo-d4af37?style=for-the-badge" alt="Ver Site">
   </a>
 </div>
@@ -74,7 +74,7 @@ A aplicação foca em uma estética "Premium" (Dark & Gold), transmitindo autori
 Clone o repositório:
 
 ```bash
-git clone https://github.com/EderJuniorS/Barbearia.git
+git clone https://github.com/EderJuniorS/Premium-Barber-Landing.git
 ```
 
 Abra o arquivo index.html no seu navegador.
